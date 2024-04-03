@@ -1,3 +1,13 @@
+terraform {
+
+  cloud {
+    organization = "BluePi"
+
+    workspaces {
+      name = "Azure-TF"
+    }
+  }
+}
 {
   "name": "azure_resource_group",
   "provider": "azurerm",
