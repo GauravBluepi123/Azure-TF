@@ -1,13 +1,6 @@
-module "prism" {
-  source  = "app.terraform.io/InterGlobeAviation-Indigo/azure_resourcegroup/azurerm"
-  version = "1.0.0"
-
-  application = "${var.PROJECT}-${var.ENV}"
-  costcenter  = var.COSTCENTER
-  department  = var.DEPARTMENT
-  env         = var.ENV
-  location    = data.azurerm_location.current.display_name
-  owner       = var.OWNER
-  rgname      = "RG-${var.DEPARTMENT}-${var.PROJECT}-${var.ENV}"
-
+module "azure_resourcegroup" {
+  source   = "app.terraform.io/BluePi/azure_resourcegroup/azurerm"
+  version  = "1.0.0"
+  rgname   = rg-bluepi
+  location = CentralIndia
 }
