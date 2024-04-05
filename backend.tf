@@ -1,9 +1,9 @@
 terraform {
   cloud {
-    organization = "InterGlobeAviation-Indigo"
+    organization = "BluePi"
 
     workspaces {
-      name = env.TF_WORKSPACE
+      name = "Bluepi-TF-Shared"
     }
   }
 }
