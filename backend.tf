@@ -3,7 +3,7 @@ terraform {
     organization = "BluePi"
 
     workspaces {
-      name = "Bluepi-TF-Shared"
+      name = "Azure-TF"
     }
   }
 }
