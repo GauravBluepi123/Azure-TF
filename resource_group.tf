@@ -3,5 +3,4 @@ module "azure_resourcegroup" {
   version  = "1.0.0"
   rgname   = var.rgname
   location = var.location
-  application = var.application
 }
