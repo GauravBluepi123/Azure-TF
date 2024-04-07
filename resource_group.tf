@@ -4,5 +4,5 @@ module "azure_resourcegroup" {
 
   rgname     = var.rgname
   location   = var.location
-  application = var.application
+  Application = var.application
 }
