@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = ">=2.0"
+    }
+  }
+}
+
 provider "azurerm" {
   features {}
   subscription_id = "f400423d-4718-4f96-9e32-4b3989422b16"
@@ -5,6 +14,7 @@ provider "azurerm" {
   client_secret   = "iwg8Q~5SZe~hpj.BQRIPNRKZpxb6UdvC-qwSCc~r"
   tenant_id       = "41ce6cb6-896d-4960-9d5b-54466d916c1c"
 }
+
 
 module "resource-group" {
   source  = "app.terraform.io/BluePi/resource-group/azurerm"
