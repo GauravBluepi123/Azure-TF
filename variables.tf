@@ -9,8 +9,3 @@ variable "location" {
   type = string
   default = "CentralIndia"
 }
-variable "application" {
-  type = string
-  default = "abc"
-}
-
