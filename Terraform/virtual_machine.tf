@@ -1,6 +1,6 @@
 module "azure_vm" {
   source  = "app.terraform.io/BluePi/azure_vm/azurerm"
-  version = "1.0.2"
+  version = "1.0.3"
   
   ip-addrs_virtual_network = var.virtual_network_ip
   location = data.azurerm_location.current.display_name
