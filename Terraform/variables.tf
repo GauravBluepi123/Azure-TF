@@ -1,7 +1,7 @@
 data "azurerm_location" "current" {
   location = "CentralIndia"
 }
-variable "rgname" {
+variable "rg_name" {
   type = string
 }
 variable "location" {
