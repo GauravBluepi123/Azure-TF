@@ -8,7 +8,7 @@ module "azure_vm" {
   network_interface_name = "my-network-interface"
   os_disk_name = "my-os-disk"
   public_ip_name = "my-public-ip"
-  rgname = var.rg_name
+  rgname = "rg-gauravkumar"
   subnet_name = "my-subnet"
   virtual_network_name = "my-virtual-network"
   vm_name = "my_vm"
