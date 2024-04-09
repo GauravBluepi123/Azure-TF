@@ -3,5 +3,5 @@ module "azure_rg" {
   version = "1.0.4"
   
   location = data.azurerm_location.current.display_name
-  rgname = abc
+  rgname = "abc"
 }
