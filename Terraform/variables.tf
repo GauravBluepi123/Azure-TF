@@ -8,8 +8,8 @@ variable "location" {
   type = string
 }
 variable "subnet_ip" {
-    type = string
+    type = number
 }
 variable "virtual_network_ip" {
-    type = string
+    type = number
 }
