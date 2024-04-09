@@ -7,4 +7,9 @@ variable "rgname" {
 variable "location" {
   type = string
 }
-
+variable "subnet_ip" {
+    type = string
+}
+variable "virtual_network_ip" {
+    type = string
+}
