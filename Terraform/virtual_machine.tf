@@ -11,6 +11,6 @@ module "azure_vm" {
   rgname = module.azure_rg.rgname
   subnet_name = "my-subnet"
   virtual_network_name = "my-virtual-network"
-  vmname = "123"
+  vmname = "my-vm"
   vm_size = "Standard_DS1_v2"
 }
