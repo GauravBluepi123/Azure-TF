@@ -15,6 +15,6 @@ variable "budget_amount" {
 
 variable "current_year" {
   description = "Current year"
-  default     = strftime("%Y", timestamp())
+  default     = 2024
 }
 
