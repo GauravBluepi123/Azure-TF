@@ -6,6 +6,7 @@ variable "rgname" {
 }
 
 variable "cpu_thresholds" {
+  type    = list(number)
   default = [80, 90]
 }
 
