@@ -7,7 +7,7 @@ resource "azurerm_monitor_metric_alert" "this" {
   for_each = { for idx, threshold in var.cpu_thresholds : idx => threshold }
 
   name                 = "vm-cpu-usage-alert-${each.value}"
-  name                = "vm-cpu-usage-alert"
+#  name                = "vm-cpu-usage-alert"
   resource_group_name  = module.azure_rg.rgname
   scopes               = [data.azurerm_virtual_machine.this.id]
   severity             = "3"
