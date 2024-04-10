@@ -5,3 +5,7 @@ variable "rgname" {
   type = string
 }
 
+variable "cpu_thresholds" {
+  default = [80, 90]
+}
+
