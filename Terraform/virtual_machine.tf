@@ -1,6 +1,6 @@
 module "azure_vm" {
   source  = "app.terraform.io/BluePi/azure_vm/azurerm"
-  version = "1.0.8"
+  version = "1.0.9"
   
  
   location = data.azurerm_location.current.display_name
