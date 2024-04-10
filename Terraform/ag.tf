@@ -1,6 +1,6 @@
 module "azure_ag" {
   source  = "app.terraform.io/BluePi/azure_ag/azurerm"
-  version = "1.0.2"
+  version = "1.0.3"
   
   action_group_name = "ActionDemo"
   ag_short_name = "action"
