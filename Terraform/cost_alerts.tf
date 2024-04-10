@@ -2,7 +2,9 @@ locals {
   months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 }
 
-resource "azurerm_consumption_budget" "monthly_budgets" {
+resource "azurerm_consumption_budget_resource_group" "monthly_budgets" {
+    budget_name = "month_budget"
+    resource_group_id = module.azure_rg.rgname
   for_each = { for idx, month in local.months : idx => month }
 
   # Budget for the current year
