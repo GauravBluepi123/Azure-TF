@@ -1,6 +1,6 @@
 module "azure_vm" {
   source  = "app.terraform.io/BluePi/azure_vm/azurerm"
-  version = "1.0.6"
+  version = "1.0.7"
   
  
   location = data.azurerm_location.current.display_name
@@ -11,6 +11,6 @@ module "azure_vm" {
   rgname = module.azure_rg.rgname
   subnet_name = "my-subnet"
   virtual_network_name = "my-virtual-network"
-  vm_name = "my_vm"
+  vmname = "my_vm"
   vm_size = "Standard_DS1_v2"
 }
