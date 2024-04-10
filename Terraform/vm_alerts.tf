@@ -20,7 +20,7 @@ resource "azurerm_monitor_metric_alert" "this" {
   }
 
   action {
-    action_group_id = module.azure_ag.azurerm_monitor_action_group
+    action_group_id = module.azure_ag.this.id
   }
 
   description = "Alert triggered when VM CPU usage exceeds 90%"
