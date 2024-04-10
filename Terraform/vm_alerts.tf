@@ -26,7 +26,7 @@ resource "azurerm_monitor_metric_alert" "this" {
   window_size = "PT5M"
 }
 
-resource "azurerm_monitor_metric_alert" "this" {
+resource "azurerm_monitor_metric_alert" "memory_alert" {
   for_each = { for idx, threshold in var.cpu_thresholds : idx => threshold }
 
   name                 = "vm-memory-usage-alert-${each.value}"
