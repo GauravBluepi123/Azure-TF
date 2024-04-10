@@ -26,10 +26,10 @@ resource "azurerm_consumption_budget" "monthly_budgets" {
   }
 
   # Budget for the upcoming year
-  name           = "monthly-budget-${each.value}-${var.current_year + 1}"
-  amount         = var.budget_amount
-  time_grain     = "Monthly"
-  time_period_end = timestamp(date(var.current_year + 1, idx + 1, 1))
+  name_upcoming           = "monthly-budget-${each.value}-${var.current_year + 1}"
+  amount_upcoming         = var.budget_amount
+  time_grain_upcoming     = "Monthly"
+  time_period_end_upcoming = timestamp(date(var.current_year + 1, idx + 1, 1))
 
   category {
     amount = var.budget_amount
