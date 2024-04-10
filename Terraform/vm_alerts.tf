@@ -1,5 +1,5 @@
 data "azurerm_virtual_machine" "this" {
-  name = module.azure_vm.vm_name
+  name = module.azure_vm.virtual_name
   resource_group_name = module.azure_rg.rgname
 }
 
