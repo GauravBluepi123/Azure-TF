@@ -10,7 +10,7 @@ resource "azurerm_monitor_metric_alert" "this" {
 #  name                = "vm-cpu-usage-alert"
   resource_group_name  = module.azure_rg.rgname
   scopes               = [data.azurerm_virtual_machine.this.id]
-  severity             = '3'
+  severity             = "3"
   criteria {
     metric_namespace = "microsoft.compute/virtualmachines"
     metric_name      = "Percentage CPU"
