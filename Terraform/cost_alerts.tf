@@ -22,8 +22,8 @@ resource "azurerm_consumption_budget_resource_group" "this" {
   notification {
     enabled        = true
     threshold      = 90.0
-    operator       = "EqualTo"
-    threshold_type = "GreaterThan"
+    operator       = "GreaterThan"
+    threshold_type = "Actual"
 
     contact_emails = [
       "gauravkumar.pandey@bluepi.in",
