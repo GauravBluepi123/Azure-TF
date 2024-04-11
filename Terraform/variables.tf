@@ -13,7 +13,7 @@ variable "budget_amount" {
   default     = 100.0
 }
 
-variable "current_year" {
+variable "year" {
   description = "Current year"
   default     = 2024
 }
