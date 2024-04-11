@@ -25,6 +25,10 @@ resource "azurerm_consumption_budget_resource_group" "this" {
     operator       = "GreaterThan"
     threshold_type = "Actual"
 
+    contact_emails = [
+      "gauravkumar.pandey@bluepi.in",
+    ]
+
     contact_groups = [
       module.azure_ag.action_group_id,
     ]
@@ -40,6 +44,10 @@ resource "azurerm_consumption_budget_resource_group" "this" {
     operator       = "GreaterThan"
     threshold_type = "Actual"
 
+    contact_emails = [
+      "gauravkumar.pandey@bluepi.in",
+    ]
+    
     contact_groups = [
       module.azure_ag.action_group_id,
     ]
@@ -59,6 +67,10 @@ resource "azurerm_consumption_budget_resource_group" "this" {
       module.azure_ag.action_group_id,
     ]
 
+    contact_emails = [
+      "gauravkumar.pandey@bluepi.in",
+    ]
+
     contact_roles = [
       "Owner",
     ]
@@ -72,6 +84,10 @@ resource "azurerm_consumption_budget_resource_group" "this" {
 
     contact_groups = [
       module.azure_ag.action_group_id,
+    ]
+
+    contact_emails = [
+      "gauravkumar.pandey@bluepi.in",
     ]
 
     contact_roles = [
