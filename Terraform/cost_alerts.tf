@@ -1,26 +1,40 @@
-locals {
-  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-}
+resource "azurerm_consumption_budget_resource_group" "this" {
+  name              = "cost_alert"
+  resource_group_id = module.azure_rg.rgname_id
 
-resource "azurerm_consumption_budget_resource_group" "monthly_budgets" {
-  for_each = { for idx, month in local.months : idx => month }
+  amount     = 1000
+  time_grain = "Monthly"
 
-  name           = "monthly-budget-${each.value}-${var.year}"
-  amount         = var.budget_amount
-  time_grain     = "Monthly"
-  time_period_end = timestamp(date(var.year, idx + 1, 1))
-
-  category {
-    amount = var.budget_amount
-    category_type = "Cost"
+  time_period {
+    start_date = "2024-04-01T00:00:00Z"
+    end_date   = "2030-12-01T00:00:00Z"
   }
 
-  notifications {
-    enabled         = true
-    contact_emails  = ["user@example.com"]
-    contact_roles   = ["Owner"]
-    threshold       = 80
-    operator        = "GreaterThan"
-    notification_key = "monthly-budget-${each.value}-${var.year}-80-percent-spent"
+  filter {
+    dimension {
+      name = "ResourceId"
+      values = [
+        module.azure_ag.action_group_id,
+      ]
+    }
+  }
+
+  notification {
+    enabled        = true
+    threshold      = 90.0
+    operator       = "EqualTo"
+    threshold_type = "GreaterThan"
+
+    contact_emails = [
+      "gauravkumar.pandey@bluepi.in",
+    ]
+
+    contact_groups = [
+      module.azure_ag.action_group_id,
+    ]
+
+    contact_roles = [
+      "Owner",
+    ]
   }
 }
