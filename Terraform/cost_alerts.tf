@@ -25,9 +25,50 @@ resource "azurerm_consumption_budget_resource_group" "this" {
     operator       = "GreaterThan"
     threshold_type = "Actual"
 
-    #contact_emails = [
-    #  "gauravkumar.pandey@bluepi.in",
-    #]
+    contact_groups = [
+      module.azure_ag.action_group_id,
+    ]
+
+    contact_roles = [
+      "Owner",
+    ]
+  }
+
+  notification {
+    enabled        = true
+    threshold      = 75.0
+    operator       = "GreaterThan"
+    threshold_type = "Actual"
+
+    contact_groups = [
+      module.azure_ag.action_group_id,
+    ]
+
+    contact_roles = [
+      "Owner",
+    ]
+  }
+
+  notification {
+    enabled        = true
+    threshold      = 50.0
+    operator       = "GreaterThan"
+    threshold_type = "Actual"
+
+    contact_groups = [
+      module.azure_ag.action_group_id,
+    ]
+
+    contact_roles = [
+      "Owner",
+    ]
+  }
+
+  notification {
+    enabled        = true
+    threshold      = 90.0
+    operator       = "GreaterThan"
+    threshold_type = "Forecast"
 
     contact_groups = [
       module.azure_ag.action_group_id,
