@@ -68,7 +68,7 @@ resource "azurerm_consumption_budget_resource_group" "this" {
     enabled        = true
     threshold      = 90.0
     operator       = "GreaterThan"
-    threshold_type = "Forecast"
+    threshold_type = "Forecasted"
 
     contact_groups = [
       module.azure_ag.action_group_id,
