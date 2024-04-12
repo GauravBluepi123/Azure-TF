@@ -4,5 +4,5 @@ module "azure_sa" {
   
   location     = data.azurerm_location.current.display_name
   rgname       = module.azure_rg.rgname
-  sa_name      = "my-sa"
+  sa_name      = "mysa123"
 }
