@@ -35,7 +35,7 @@ resource "azurerm_monitor_metric_alert" "memory_alert" {
 
   criteria {
     metric_namespace = "microsoft.compute/virtualmachines"
-    metric_name      = "Available Memory Bytes"
+    metric_name      = "Percentage Memory Used"
     aggregation      = "Average"
     operator         = "GreaterThan"
     unit             = "GB"
