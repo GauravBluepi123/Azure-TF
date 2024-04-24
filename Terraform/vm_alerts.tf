@@ -35,7 +35,7 @@ resource "azurerm_monitor_metric_alert" "memory_alert" {
 
   criteria {
     metric_namespace = "microsoft.compute/virtualmachines"
-    metric_name      = "Percentage Memory Used"
+    metric_name      = "Available Memory Bytes"
     aggregation      = "Average"
     operator         = "GreaterThan"
     threshold        = each.value
@@ -45,6 +45,6 @@ resource "azurerm_monitor_metric_alert" "memory_alert" {
     action_group_id = module.azure_ag.action_group_id
   }
 
-  description = each.value == 90 ? "Alert triggered when VM Memory usage exceeds 90%" : "Alert triggered when VM Memory usage exceeds 80%"
+  description = each.value == 90 ? "Alert triggered when VM Memory usage exceeds 90%" : "Alert triggered when VM CPU usage exceeds 80%"
   window_size = "PT5M"
 }
