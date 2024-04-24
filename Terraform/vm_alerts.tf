@@ -38,7 +38,6 @@ resource "azurerm_monitor_metric_alert" "memory_alert" {
     metric_name      = "Percentage Memory Used"
     aggregation      = "Average"
     operator         = "GreaterThan"
-    unit             = "GB"
     threshold        = each.value
   }
 
